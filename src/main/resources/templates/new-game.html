@@ -5,7 +5,14 @@
     <title>Cities game</title>
 </head>
 <body>
-Start new game
-<p th:text = "${city.getName}">Name</p>
+<h1>Start new game</h1>
+<p th:text = "${randomCity.getName}">Name</p>
+<br/>
+<h2>Enter your city</h2>
+<form th:method="POST" th:action="@{/city}" th:object="${city}">
+    <input type="text" th:field="*{name}">
+    <br/>
+    <input type="submit" title="Submit">
+</form>
 </body>
 </html>
