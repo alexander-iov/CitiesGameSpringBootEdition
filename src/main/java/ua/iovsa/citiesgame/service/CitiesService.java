@@ -44,4 +44,8 @@ public class CitiesService {
         return null;
     }
 
+    public void addCity(City city) {
+        tempCity.add(city);
+    }
+
 }

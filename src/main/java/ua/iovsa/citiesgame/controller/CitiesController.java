@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import ua.iovsa.citiesgame.model.City;
 import ua.iovsa.citiesgame.service.CitiesService;
 
-
 @Controller
 public class CitiesController {
 
@@ -30,6 +29,7 @@ public class CitiesController {
 
     @PostMapping("/city")
     public String city(@ModelAttribute("city") City city, Model model) {
+        citiesService.addCity(city);
         City newCity = citiesService.getNextCity(city.getName());
         count++;
         if (newCity != null) {
