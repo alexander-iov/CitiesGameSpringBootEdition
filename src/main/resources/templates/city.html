@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8" >
+    <meta charset="UTF-8">
     <title>Next city</title>
 </head>
 <body>
+<h1>Next city: </h1>
 <p th:text="${newCity.getName}">Name</p>
+<h2>Your score: </h2>
+<p th:text="${count}">Count</p>
 <br/>
 <h2>Enter your city</h2>
 <form th:method="POST" th:action="@{/city}" th:object="${city}">
