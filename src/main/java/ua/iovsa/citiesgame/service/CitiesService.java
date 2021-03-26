@@ -35,8 +35,7 @@ public class CitiesService {
         for (City c : all) {
             if (tempCity.contains(c)){
                 continue;
-            }
-            if (c.getName().startsWith(substring.toUpperCase())){
+            } else if (c.getName().startsWith(substring.toUpperCase())){
                 tempCity.add(c);
                 return c;
             }

@@ -22,7 +22,9 @@ public class CitiesController {
 
     @GetMapping("/new-game")
     public String newGame(Model model) {
-        model.addAttribute("randomCity", citiesService.randomCity());
+        City city = citiesService.randomCity();
+        System.out.println(city);
+        model.addAttribute("randomCity", city);
         model.addAttribute("city", new City());
         return "/new-game";
     }
@@ -30,7 +32,9 @@ public class CitiesController {
     @PostMapping("/city")
     public String city(@ModelAttribute("city") City city, Model model) {
         citiesService.addCity(city);
+        System.out.println(city);
         City newCity = citiesService.getNextCity(city.getName());
+        System.out.println(newCity);
         count++;
         if (newCity != null) {
             model.addAttribute("newCity", newCity);
